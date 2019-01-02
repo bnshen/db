@@ -10,17 +10,7 @@ keys = {
     'e':['学号', '学期', '课号', '工号', '平时成绩', '考试成绩', '总评成绩']
 }
 
-class law_help_key_form(Form):
-    data = StringField('按关键字查询法援记录', validators=[DataRequired()])
-    submit = SubmitField('查询')
 
-class law_help_date_form(Form):
-    data = StringField('按年月日法援记录(样例\'201703\')', validators=[DataRequired()])
-    submit = SubmitField('查询')
-
-class law_dict_key_form(Form):
-    data = StringField('按关键字查询法律法规', validators=[DataRequired()])
-    submit = SubmitField('查询')
 
 class switchdb(Form):
     data = SelectField('选择你要查询的数据库',choices=[(None,None)]+[(i,i) for i in keys.keys()])

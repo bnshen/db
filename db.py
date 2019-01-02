@@ -22,6 +22,8 @@ def findx(s:str):
     conn.close()
 
 def deletex(table:str,params:dict):
+    if table not in keys or len(params) != len(keys[table]):
+        raise
     sql = 'delete from %s where ' % table
     index = 0
     for param in params:

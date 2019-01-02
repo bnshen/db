@@ -34,6 +34,15 @@ def show(tablename):
         return redirect('/'+form.data.data)
     return render_template('design.html',content =content,keys = keys[tablename],form = form,tablename = tablename)
 
+@app.route('/query',methods = ['POST'])
+def getcourses():
+    data = request.form.to_dict()
+    result = {}
+    result['contents'] = db.findx(data['tablename'])
+    result['keys'] = keys[data['tablename']]
+    return make_response(json.dumps(result),200)
+
+
 @app.route('/delete',methods = ['POST'])
 def delete():
     data = request.form.to_dict()
@@ -46,13 +55,13 @@ def delete():
             return make_response('删除成功',200)
         except Exception as e:
             print(e)
-            return make_response('unknown error',200)
+            return make_response('unknown error',500)
     else:
         try:
-            return make_response('无法删除',200)
+            return make_response('无法删除',500)
         except Exception as e:
             print(e)
-            return make_response('unknown error',200)
+            return make_response('unknown error',500)
 
 
 if __name__ == '__main__':
