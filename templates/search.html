@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% import "bootstrap/wtf.html" as wtf %}
+<html lang="en">
+    <head>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+        <link href="/static/home.css" rel="stylesheet" type="text/css">
+
+        <title>上海大学法学院律舟法律援助信息检索平台</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+        <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">欢迎来到上海大学法学院律舟法律援助信息检索平台</a>
+            </div>
+
+
+    </div>
+</nav>
+<div class="outer">
+    <div class="form-wrap">
+        {{ wtf.quick_form(form) }}
+    </div>
+</div>
+
+</body>
+
+</html>
+
